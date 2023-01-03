@@ -14,23 +14,43 @@ function App() {
           Choose a Document to Annotate :
         </div>
         <div className="d-flex px-4 py-1">
-        <Link to={`document`}>
-          <div className="d-inline-flex p-1 text- bg-primary-subtle bg-opacity-10 border border-primary  border-3 rounded-start rounded-end">
-          SampleDocument_1.pdf
-          </div>
+          <Link
+            to="/document"
+            state={{ pdf: "https://arxiv.org/pdf/2212.08011.pdf" , doc_id: "1"}}
+          >
+            <div className="d-inline-flex p-1 text- bg-primary-subtle bg-opacity-10 border border-primary  border-3 rounded-start rounded-end">
+              SampleDocument_1.pdf
+            </div>
           </Link>
         </div>
         <div className="d-flex px-4 py-1">
-        <Link to={`document`}>
-          <div className="d-inline-flex p-1 text- bg-primary-subtle bg-opacity-10 border border-primary  border-3 rounded-start rounded-end">
-          SampleDocument_2.pdf
-          </div>
+          <Link
+            to={`document`}
+            state={{ pdf: "https://arxiv.org/pdf/2212.07937.pdf" , doc_id: "2"}}
+          >
+            <div className="d-inline-flex p-1 text- bg-primary-subtle bg-opacity-10 border border-primary  border-3 rounded-start rounded-end">
+              SampleDocument_2.pdf
+            </div>
           </Link>
-        </div><div className="d-flex px-4 py-1">
-        <Link to={`document`}>
-          <div className="d-inline-flex p-1 text- bg-primary-subtle bg-opacity-10 border border-primary  border-3 rounded-start rounded-end">
-          SampleDocument_3.pdf
-          </div>
+        </div>
+        <div className="d-flex px-4 py-1">
+          <Link
+            to={`document`}
+            state={{ pdf: "https://arxiv.org/pdf/2212.07931.pdf" , doc_id: "3"}}
+          >
+            <div className="d-inline-flex p-1 text- bg-primary-subtle bg-opacity-10 border border-primary  border-3 rounded-start rounded-end">
+              SampleDocument_3.pdf
+            </div>
+          </Link>
+        </div>
+        <div className="d-flex px-4 py-1">
+          <Link
+            to={`document`}
+            state={{ pdf: "https://drive.google.com/file/d/1aj_sAGsAPoCkCxz0FiOcnHq77y7o8WKE/view?usp=sharing", doc_id: "4" }}
+          >
+            <div className="d-inline-flex p-1 text- bg-primary-subtle bg-opacity-10 border border-primary  border-3 rounded-start rounded-end">
+              SampleDocument_4.pdf
+            </div>
           </Link>
         </div>
       </div>
