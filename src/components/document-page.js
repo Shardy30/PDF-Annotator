@@ -7,19 +7,19 @@ const Document_page = () => {
   const pdf_url = propsData.pdf;
   const doc_id = propsData.doc_id;
   console.log("The url of pdf to be loaded is:", pdf_url, doc_id);
-  const box={
-    x:"11",
-    y:"12",
-    width:"2",
-    height:"1",
-    pageNumber:"8",
-    annotation:"Author"
+  const box = {
+    x: "110",
+    y: "123",
+    width: "100",
+    height: "50",
+    pageNumber: "8",
+    annotation: "Author",
   };
-  let boxes=[box,box];
+  let boxes = [box];
   return (
     <>
       <div className="container p-2 row">
-        <div className="col-4">
+        <div className="col-5">
           <div className="d-inline-flex p-4 g-col-6 h4 pb-2 mb-4 text-dark border-bottom border-primary border-2 border-start-0">
             Labels :
           </div>
@@ -39,17 +39,31 @@ const Document_page = () => {
             Boxes :
           </div>
           <div className="p-2">
-              {boxes.map((box, i) => (
-                <div className="py-2">
-                <div key={i} className='p-2 px-4 border border-dark-subtle border-2 rounded'>
-                  <p>x: {box.x} &nbsp; &nbsp;  y: {box.y} &nbsp; &nbsp; height: {box.height} &nbsp; &nbsp; width: {box.width} </p>
-                  <p>Page: {box.pageNumber} &nbsp; &nbsp; &nbsp; Type: <text className={box.annotation==="Title"?"text-danger":"text-success"}>{box.annotation}</text> </p>
+            {boxes.map((box, i) => (
+              <div key={i} className="py-2">
+                <div className="d-inline-flex align-items-start flex-column mb-3 p-2 px-4 border border-dark-subtle border-2 rounded">
+                  <p>
+                    x: {box.x} &nbsp; y: {box.y} &nbsp; &nbsp; height:{" "}
+                    {box.height} &nbsp; width: {box.width}{" "}
+                  </p>
+                  <p>
+                    Page: {box.pageNumber} &nbsp; &nbsp; &nbsp; Type:{" "}
+                    <text
+                      className={
+                        box.annotation === "Title"
+                          ? "text-danger"
+                          : "text-success"
+                      }
+                    >
+                      {box.annotation}
+                    </text>{" "}
+                  </p>
                 </div>
-                </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="col-8 p-4">ok</div>
+        <div className="col-7 p-4">ok</div>
       </div>
     </>
   );
